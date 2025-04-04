@@ -56,10 +56,3 @@ jobs:
     - name: Run tests
       run: |
         pytest --maxfail=1 --disable-warnings -q
-
-    - name: Deploy to Docker (example, optional)
-      if: github.ref == 'refs/heads/main'
-      run: |
-        # Пример для деплоя в Docker
-        docker build -t my-django-app .
-        docker run -d -p 8000:8000 my-django-app
