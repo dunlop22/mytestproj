@@ -4,6 +4,14 @@ FROM python:3.9-slim
 # Установим рабочую директорию внутри контейнера
 WORKDIR /app
 
+ENV DEBUG=False
+ENV SECRET_KEY=test-secret-key
+ENV DATABASE_NAME=postgres
+ENV DATABASE_USER=postgres
+ENV DATABASE_PASSWORD=password
+ENV DATABASE_HOST=localhost
+ENV DATABASE_PORT=5432
+
 # Копируем зависимости
 COPY requirements.txt /app/
 
