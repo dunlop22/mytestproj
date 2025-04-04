@@ -1,0 +1,155 @@
+{% extends 'excar/base.html' %}
+{% load static %}
+
+{% block title %}eXCar{% endblock %}
+{% block body %}
+
+
+<section>
+    
+
+    <div class="container">
+        <!--Изображения в ряд (Кузов)-->
+    <div style="padding-top: 25px"></div>   <!--Отступ-->
+    <div style="padding-top: 25px"></div>   <!--Отступ-->
+
+      <h1 align="center" style="font-family: 'Black Ops One', cursive;">{{modelAuto.marka}}  {{modelAuto.naimenovanie}}</h1>
+
+      <div class="row">
+        <div class="col-4">
+          <div class="card w-100">
+            <img
+              src="../djangoapp/uploads/{{modelAuto.photo1}}"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card w-100">
+            <img
+              src="../djangoapp/uploads/{{modelAuto.photo2}}"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card w-100">
+            <img
+              src="../djangoapp/uploads/{{modelAuto.photo3}}"
+              class="card-img-top"
+              alt="..."
+            />
+          </div>
+        </div>
+      
+      <div style="padding-top: 25px"></div>   <!--Отступ-->
+
+<div class="card mb-3">
+      <div class="row g-0">
+        
+        <div class="col-md-7">
+          <div class="card-body">
+            <h1 align="center" class="card-title" style="font-family: 'Black Ops One', cursive;">Особенность</h1>
+            <p class="card-text">{{modelAuto.osobennosti}}</p>
+            <!--<p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>-->
+          </div>
+        </div>
+        <div class="col-md-5">
+          <img src="../djangoapp/uploads/{{modelAuto.photoosobennosti}}" class="img-fluid rounded-start" alt="...">
+        </div>
+      </div>
+    </div>
+    <div style="padding-top: 25px"></div>   <!--Отступ-->
+
+     
+        
+    <!--Технические Характеристики-->
+  <div class="container">
+    <div style="padding-top: 15px"></div>   <!--Отступ-->
+    <div class="card">
+    
+      <h1 align="center" class="card-title" style="font-family: 'Black Ops One', cursive;">Технические Характеристики</h1>
+    <div style="padding-top: 15px"></div>   <!--Отступ-->
+
+    <div class="input-group input-group-sm mb-3">
+      
+      <div class="col-3">
+        <span class="input-group-text">Объем топливного бака</span>
+      </div>
+      <div class="col-2">
+        <input class="form-control text-center" type="text" value="{{ modelAuto.obembaka }}L" aria-label="Пример отключенного входа" disabled readonly>
+      </div>
+    <div class="col-sm-2 col-form-label"></div>
+
+      <div class="col-3 ">
+        <span class="input-group-text">Степень сжатия</span>
+      </div>
+      <div class="col-2">
+        <input class="form-control text-center" type="text" value={{ modelAuto.stepensjatiya }} aria-label="Пример отключенного входа" disabled readonly>
+      </div>
+    </div>
+
+    <div class="input-group input-group-sm mb-3 ">
+      <div class="col-3 ">
+        <span class="input-group-text">Мощность двигателя</span>
+      </div>
+      <div class="col-2">
+        <input class="form-control text-center" type="text" value={{ modelAuto.mochnost }}л.с. aria-label="Пример отключенного входа" disabled readonly>
+      </div>
+      <div class="col-sm-2 col-form-label"></div>
+
+      <div class="col-3 ">
+        <span class="input-group-text">Тип коробки передач</span>
+      </div>
+      <div class="col-2">
+        <input class="form-control text-center" type="text" value="{{modelAuto.korobkaperedach}}" aria-label="Пример отключенного входа" disabled readonly>
+      </div>
+    </div>
+
+<div class="input-group input-group-sm mb-3 ">
+      <div class="col-3 ">
+        <span class="input-group-text">Топливо</span>
+      </div>
+      <div class="col-2">
+        <input class="form-control text-center" type="text" value={{ modelAuto.toplivo }} aria-label="Пример отключенного входа" disabled readonly>
+      </div>
+      <div class="col-sm-2 col-form-label"></div>
+
+      <div class="col-3 ">
+        <span class="input-group-text">Тип привода</span>
+      </div>
+      <div class="col-2">
+        <input class="form-control text-center" type="text" value={{modelAuto.privod}} aria-label="Пример отключенного входа" disabled readonly>
+      </div>
+    </div>
+
+      <div class="input-group input-group-sm mb-3 ">
+      <div class="col-3 ">
+        <span class="input-group-text">Дорожный просвет</span>
+      </div>
+      <div class="col-2  justify-content-end">
+        <input class="form-control text-center" type="text" value={{modelAuto.clirens}}мм aria-label="Пример отключенного входа" disabled readonly>
+      </div>
+      <div class="col-sm-2 col-form-label"></div>
+
+      <div class="col-3 ">
+      <span class="input-group-text">Колеса</span>
+    </div>
+    <div class="col-2">
+      <input class="form-control text-center" type="text" value={{modelAuto.kolesa}} aria-label="Пример отключенного входа" disabled readonly>
+    </div>
+  </div>
+
+  </div>
+  <div style="padding-top: 25px"></div>   <!--Отступ-->
+
+  <img src="../djangoapp/uploads/{{modelAuto.izobrazhenie}}" class="img-fluid rounded-start" height="250px" alt="...">
+  
+  <div style="padding-top: 25px"></div>   <!--Отступ-->
+
+  </div>
+  </main>
+
+    {% endblock %}

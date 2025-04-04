@@ -1,0 +1,183 @@
+{% extends 'excar/base.html' %}
+{% load static %}
+
+{% block title %}eXCar{% endblock %}
+
+{% block body %}
+
+<div style="padding-top: 25px"></div>
+<!--Отступ-->
+<!--Другой слайдер-->
+
+<!--Слайдшоу на главном экране-->
+<div class="container">
+  <div class="slideshow">
+    <div class="slideshow-item">
+      <img src="{% static 'img/main/WRX.jpg' %}" alt="" />
+      <div class="slideshow-item-text">
+        <h5>Subaru WRX STi</h5>
+        <p>
+          Испытайте исключительные чувства владельца STI, вызывающего восхищения
+          автолюбителей во всем мире.
+        </p>
+      </div>
+    </div>
+    <div class="slideshow-item">
+      <img src="{% static 'img/main/XV2.jpg' %}" alt="" />
+      <div class="slideshow-item-text">
+        <h5>Subaru XV</h5>
+        <p>
+          Яркий дизайн, постоянный полный привод и высокий дорожный просвет все,
+          что нужно для активной жизни.
+        </p>
+      </div>
+    </div>
+    <div class="slideshow-item">
+      <img src="{% static 'img/main/Outback2.jpg' %}" alt="" />
+      <div class="slideshow-item-text">
+        <h5>Subaru Outback</h5>
+        <p>
+          Городской автомобиль повышенной проходимости, который станет идеальным
+          выбором для жителей мегаполисов, предпочитающих активный образ жизни.
+        </p>
+      </div>
+    </div>
+    <div class="slideshow-item">
+      <img src="{% static 'img/main/Forester.jpg' %}" alt="" />
+      <div class="slideshow-item-text">
+        <h5>Subaru Forester</h5>
+        <p>
+          Кроссовер, занимающий нишу между компактной моделью XV и
+          среднеразмерной Outback.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding-top: 25px"></div>
+
+<div class="container">
+    <hr />
+    <div class="row">
+      <h2 style="text-align: center; font-family: Monoton; font-size: 60px">
+        NEWS
+      </h2>
+  
+      <hr />
+    </div>
+  
+    <div style="padding-top: 25px"></div>
+    <!--Отступ-->
+    <!--Блок новостей-->
+    <div class="container">
+      <section class="text-center mb-4">
+        <div class="row wow fadeIn">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="view overlay">
+                <img
+                  class="card-img-top"
+                  src="https://s.auto.drom.ru/i24286/pubs/4/95204/gen340_4153218.jpg"
+                  alt=""
+                />
+                <a href="">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">
+                  Флагманскую версию спорт-седана Mercedes-AMG GT 4-Door Coupe
+                  подвергли обновлению
+                </h5>
+                <a
+                  href="https://news.drom.ru/Mercedes-AMG-GT-4-Door-Coupe-95204.html"
+                  class="btn btn-primary"
+                  >Читать</a
+                >
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="view overlay">
+                <img
+                  class="card-img-top"
+                  src="https://s.auto.drom.ru/i24286/pubs/4/95203/gen340_4153203.jpeg"
+                  alt=""
+                />
+                <a href="">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">
+                  Мотор от Гранты адаптировали под моторные лодки
+                </h5>
+                <a href="https://news.drom.ru/95203.html" class="btn btn-primary"
+                  >Читать</a
+                >
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="view overlay">
+                <img
+                  class="card-img-top"
+                  src="https://s.auto.drom.ru/i24286/pubs/4/95199/gen340_4153098.jpg"
+                  alt=""
+                />
+                <a href="">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">
+                  В Японии стартовали продажи нового кроссовера Toyota Crown Sport
+                </h5>
+                <a
+                  href="https://news.drom.ru/Toyota-Crown-Sport-95199.html"
+                  class="btn btn-primary"
+                  >Читать</a
+                >
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="view overlay">
+                <img
+                  class="card-img-top"
+                  src="https://s.auto.drom.ru/i24286/pubs/4/95191/gen340_4152939.jpg"
+                  alt=""
+                />
+                <a href="">
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title">
+                  Москвич теряет покупателей, не выполняет «план Мозера» и срывает
+                  «план Собянина»
+                </h5>
+                <a href="https://news.drom.ru/95191.html" class="btn btn-primary"
+                  >Читать</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+<!--Отступ-->
+{% endblock %}

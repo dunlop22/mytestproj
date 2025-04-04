@@ -1,0 +1,387 @@
+{% extends 'excar/base.html' %}
+{% load static %}
+
+{% block title %}New Auto{% endblock %}
+
+{% block body %}
+<div style="padding-top: 70px"></div>
+<div class="container">
+    <h2 class="text-center">Информации о автомобиле:</h2>
+    <!--Отступ-->
+    <div style="padding-top: 10px"></div>
+    <!--Горизонтальная линия-->
+    <hr />
+    <!--Отступ-->
+    <div style="padding-top: 35px"></div>
+
+    <form method="POST" class="rastenie-form" enctype="multipart/form-data">    
+        {% csrf_token %}
+
+        <!--Модель-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text"> {{ form.naimenovanie.label }}</span>
+            </div>
+            {{ form.naimenovanie}}
+        </div>
+        <!--Модель-->
+
+        <!--Принадлежность бренду-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+                <span class="input-group-text">{{ form.marka.label }}</span>
+                </div>
+                {{ form.marka }}
+            
+            </div>
+        <!--___Принадлежность бренду___-->
+
+        
+        <!--Кузов-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+                <span class="input-group-text">{{ form.kuzov.label }}</span>
+                </div>
+                {{ form.kuzov }}
+            </div>
+            <!--Кузов-->
+
+
+
+            
+        <!--Цена-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.price.label }}</span>
+            </div>
+            {{ form.price}}
+        </div>
+        <!--___Цена___-->
+
+        <!--Основное изображение-->
+        {{ form.izobrazhenie.label}}
+        <div class="row mb-3">
+            {% if form.instance.izobrazhenie %}
+            <div class="col-12 col-md-4 mb-3">
+                <div class="card shadow">
+                    <img src="../../djangoapp/uploads/{{ form.instance.izobrazhenie }}" class="rounded-start rounded-end" alt="">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8">
+                {{ form.izobrazhenie }}
+            </div>
+            {% else %}
+                <div class="col">
+                    {{ form.izobrazhenie }}
+                </div>
+            {% endif %}
+        </div>
+
+
+        <!--___Основное изображение___-->
+
+
+
+
+        <!--Описание-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.opisanie.label}}</span>
+            </div>
+            {{ form.opisanie}}
+        </div>
+        <!--___Описание___-->
+
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <!--Горизонтальная линия-->
+        <hr />
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <h2 class="text-center">Трансмиссия</h2>
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <!--Горизонтальная линия-->
+        <hr />
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+
+        <!--Привод-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.privod.label}}</span>
+            </div>
+            {{ form.privod}}
+        </div>
+        <!--___Привод___-->
+
+        <!--Тип коробки-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.korobkaperedach.label}}</span>
+            </div>
+            {{ form.korobkaperedach}}
+        </div>
+        <!--___Привод___-->
+
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <!--Горизонтальная линия-->
+        <hr />
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <h2 class="text-center">Двигатель</h2>
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <!--Горизонтальная линия-->
+        <hr />
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+
+        <!--Мощность-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.mochnost.label}}</span>
+            </div>
+            {{ form.mochnost }}
+        </div>
+        <!--___Мощность___-->
+
+
+        <!--Степень сжатия-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.stepensjatiya.label}}</span>
+            </div>
+            {{ form.stepensjatiya}}
+        </div>
+        <!--___Степень сжатия___-->
+
+        <!--Тип топлива-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.toplivo.label}}</span>
+            </div>
+            {{ form.toplivo }}
+        </div>
+        <!--___Тип топлива___-->
+
+        <!--Объем топливного бака-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.obembaka.label}}</span>
+            </div>
+            {{ form.obembaka }}
+        </div>
+        <!--___Объем топливного бака___-->
+
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <!--Горизонтальная линия-->
+        <hr />
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <h2 class="text-center">Габариты</h2>
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <!--Горизонтальная линия-->
+        <hr />
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+
+        <!--Длина-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.dlina.label}}</span>
+            </div>
+            {{ form.dlina}}
+        </div>
+        <!--___Длина корпуса___-->
+
+        <!--Ширина-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.shirina.label}}</span>
+            </div>
+            {{ form.shirina }}
+        </div>
+        <!--___Ширина корпуса___-->
+
+        <!--Высота-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.visota.label}}</span>
+            </div>
+            {{ form.visota}}
+        </div>
+        <!--___Высота корпуса___-->
+
+        <!--Клиренс-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.clirens.label}}</span>
+            </div>
+            {{ form.clirens}}
+        </div>
+        <!--___Клиренс___-->
+
+        <!--Колеса-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.kolesa.label}}</span>
+            </div>
+            {{ form.kolesa}}
+        </div>
+        <!--___Длина корпуса___-->
+
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <!--Горизонтальная линия-->
+        <hr />
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <h2 class="text-center">Особенности</h2>
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <!--Горизонтальная линия-->
+        <hr />
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+
+        <!--Индивидуальные особенности автомобиля-->
+        <div class="input-group input-group-sm mb-3">
+            <div class="col-md-3 offset-md-3">
+            <span class="input-group-text">{{ form.osobennosti.label}}</span>
+            </div>
+            {{ form.osobennosti }}
+            </div>
+        <!--___Индивидуальные особенности автомобиля___-->
+
+        <!--Изображение авто (Особенности)-->
+        {{ form.photoosobennosti.label}}
+        <div class="row mb-3">
+            {% if form.instance.photoosobennosti %}
+            <div class="col-12 col-md-4 mb-3">
+                <div class="card shadow">
+                    <img src="../../djangoapp/uploads/{{ form.instance.photoosobennosti }}" class="rounded-start rounded-end" alt="">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8">
+                {{ form.photoosobennosti }}
+            </div>
+            {% else %}
+            <div class="col-12 col-md-8">
+            <!--    <div class="col">-->
+                    {{ form.photoosobennosti }}
+                </div>
+            {% endif %}
+        </div>
+        <!--___Изображение авто (Особенности)____-->
+
+
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <!--Горизонтальная линия-->
+        <hr />
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <h2 class="text-center">Фотолента</h2>
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+        <!--Горизонтальная линия-->
+        <hr />
+        <!--Отступ-->
+        <div style="padding-top: 10px"></div>
+
+        <!--Фото-Лента 1-->
+        {{ form.photo1.label}}
+        <div class="row mb-3">
+            {% if form.instance.photo1 %}
+            <div class="col-12 col-md-4 mb-3">
+                <div class="card shadow">
+                    <img src="../../djangoapp/uploads/{{ form.instance.photo1 }}" class="rounded-start rounded-end" alt="">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8">
+                {{ form.photo1 }}
+            </div>
+            {% else %}
+            <div class="col">
+            <!--    <div class="col">-->
+                    {{ form.photo1 }}
+                </div>
+            {% endif %}
+        </div>
+        <!--___Фото-Лента 1____-->
+
+
+        
+
+        <!--Фото-Лента 2-->
+        {{ form.photo2.label}}
+        <div class="row mb-3">
+            {% if form.instance.photo2 %}
+            <div class="col-12 col-md-4 mb-3">
+                <div class="card shadow">
+                    <img src="../../djangoapp/uploads/{{ form.instance.photo2 }}" class="rounded-start rounded-end" alt="">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8">
+                {{ form.photo2 }}
+            </div>
+            {% else %}
+            <div class="col">
+                    {{ form.photo2 }}
+                </div>
+            {% endif %}
+        </div>
+        <!--___Фото-Лента 2____-->
+
+
+        
+
+        <!--Фото-Лента 3-->
+        {{ form.photo3.label}}
+        <div class="row mb-3">
+            {% if form.instance.photo3 %}
+            <div class="col-12 col-md-4 mb-3">
+                <div class="card shadow">
+                    <img src="../../djangoapp/uploads/{{ form.instance.photo3 }}" class="rounded-start rounded-end" alt="">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8">
+                {{ form.photo3 }}
+            </div>
+            {% else %}
+            <div class="col">
+            
+                    {{ form.photo3 }}
+                </div>
+            {% endif %}
+        </div>
+        <!--___Фото-Лента 3____-->
+
+
+  
+
+
+
+        <!--___Дополнительное изображение авто____-->
+        <!--Горизонтальная линия-->
+        <hr />
+        <div class="d-grid gap-2">
+            <input class="btn btn-success text-center" type="submit" value="Сохранить">
+        </div>
+
+        </div>
+
+    </form>
+
+
+
+  {% endblock %}

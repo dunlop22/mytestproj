@@ -1,0 +1,71 @@
+{% extends 'excar/base.html' %}
+{% load static %}
+
+{% block title %}eXCar{% endblock %}
+
+{% block body %}
+
+<div style="padding-top: 25px"></div>
+<!--Карточки авто-->
+<div class="container">
+    <section class="text-center mb-4">
+      <div class="row wow fadeIn">
+        <div class="row gy-5"></div>
+        {% for modelAuto in ModelAutos %}
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="view overlay">
+              <img
+                class="card-img-top"
+                src="djangoapp/uploads/{{ modelAuto.izobrazhenie }}"
+                alt=""
+              />
+              <a href="">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{modelAuto.marka}}  {{ modelAuto.naimenovanie }}</h5>
+              <p class="card-text">
+                {{ modelAuto.Marka }}
+              </p>
+              <a href="{% url 'show' pk=modelAuto.pk %}" class="btn btn-primary center-block"
+                >Купить от {{ modelAuto.price }}₽</a
+              >
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item text-white bg-success">
+                Мощность: {{ modelAuto.mochnost }} л.с.
+              </li>
+              <li class="list-group-item">
+                Объем топливного бака: {{ modelAuto.obembaka }}L
+              </li>
+              <li class="list-group-item text-white bg-danger">
+                Тип КПП: {{ modelAuto.korobkaperedach }}
+              </li>
+
+              <li class="list-group-item text-white bg-warning">
+                <form method="POST" class="post-form" action="{% url 'delete' pk=modelAuto.pk %}" onclick="return confirm('Вы уверены, что хотите удалить этот автомобиль? Действие нельзя отменить.');">
+                    {% csrf_token %}
+                    <button type="submit" class="btn bi-button"><i class="bi bi-x-square"></i></button>
+                  </form>
+              </li>
+
+
+  
+              <li class="list-group-item text-white bg-secondary">
+                <a href="{% url 'edit' pk=modelAuto.pk %}" class="">
+                    <i class="bi bi-pencil-square"></i>
+                  </a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+  
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+{% endblock %}
