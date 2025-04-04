@@ -17,6 +17,7 @@ jobs:
       DATABASE_PORT: 5432
       SECRET_KEY: test-secret-key
       DEBUG: 'True'
+      DATABASE_POY: 32.32
 
     steps:
     - name: Checkout code
