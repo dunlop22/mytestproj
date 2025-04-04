@@ -35,6 +35,4 @@ jobs:
         password: ${{ secrets.SERVER_PASSWORD }}
         port: 24
         script: |
-          cd /path/to/your/project
-          docker-compose down
-          docker-compose up -d
+           docker run -d --rm -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/myproject:latest
