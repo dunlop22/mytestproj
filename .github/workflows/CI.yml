@@ -29,7 +29,7 @@ jobs:
     env:
       DATABASE_NAME: postgres
       DATABASE_USER: postgres
-      DATABASE_PASSWORD: postgres
+      DATABASE_PASSWORD: password
       DATABASE_HOST: localhost
       DATABASE_PORT: 5432
       SECRET_KEY: test-secret-key
