@@ -4,14 +4,6 @@ FROM python:3.9-slim
 # Установим рабочую директорию внутри контейнера
 WORKDIR /app
 
-ENV DEBUG=False
-ENV SECRET_KEY=test-secret-key
-ENV DATABASE_NAME=postgres
-ENV DATABASE_USER=postgres
-ENV DATABASE_PASSWORD=password
-ENV DATABASE_HOST=109.195.38.77
-ENV DATABASE_PORT=5432
-
 # Копируем зависимости
 COPY requirements.txt /app/
 
@@ -22,7 +14,15 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app/
 
 # Настроим переменные окружения
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
+ENV DEBUG=False
+ENV SECRET_KEY=${SECRET_KEY}
+ENV DATABASE_NAME=${DATABASE_NAME}
+ENV DATABASE_USER=${DATABASE_USER}
+ENV DATABASE_PASSWORD=${DATABASE_PASSWORD}
+ENV DATABASE_HOST=${DATABASE_HOST}
+ENV DATABASE_PORT=${DATABASE_PORT}
+
 
 # Собираем статику (если нужно)
 RUN python manage.py collectstatic --noinput
