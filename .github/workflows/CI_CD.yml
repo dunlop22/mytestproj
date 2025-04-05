@@ -58,6 +58,7 @@ jobs:
         pytest --maxfail=1 --disable-warnings -q
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
 
     env:
