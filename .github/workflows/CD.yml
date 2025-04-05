@@ -53,7 +53,6 @@ jobs:
         password: ${{ secrets.SERVER_PASSWORD }}
         port: 24
         script: |
-           docker stop myproject || true
            docker rmi ${{ secrets.DOCKER_USERNAME }}/myproject:latest || true
            docker pull ${{ secrets.DOCKER_USERNAME }}/myproject:latest
            docker run -d --rm --name myproject -p 8000:8000 ${{ secrets.DOCKER_USERNAME }}/myproject:latest
