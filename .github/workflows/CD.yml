@@ -53,4 +53,5 @@ jobs:
         password: ${{ secrets.SERVER_PASSWORD }}
         port: 24
         script: |
+           docker stop myproject
            docker run --pull always -d --rm --name myproject -p 8000:8000 ${{ secrets.DOCKER_USERNAME }}/myproject:latest
