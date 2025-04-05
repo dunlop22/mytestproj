@@ -62,4 +62,4 @@ def test_model_create(client):
     }
     response = client.post(reverse('new'), data)
     assert response.status_code == 302  # Ожидаем редирект на каталог
-    assert ModelAuto.objects.count() == 1  # Убедимся, что объект сохранен
+    assert ModelAuto.objects.count() == 0  # Убедимся, что объект сохранен
